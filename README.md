@@ -1,5 +1,6 @@
 # TODO
 
+- https://github.com/DNLHC/glance.nvim
 - Check https://github.com/zbirenbaum/copilot.lua
 - Check https://github.com/f3fora/cmp-spell
 - Check https://github.com/rcarriga/cmp-dap

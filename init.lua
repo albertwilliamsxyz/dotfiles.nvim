@@ -30,8 +30,8 @@ vim.opt.ttimeoutlen = 0
 -- Functions
 
 local function reload_configuration()
-        vim.cmd(vim.fn.expand("source $MYVIMRC"))
-        print(vim.fn.expand("$MYVIMRC sourced successfully"))
+	vim.cmd(vim.fn.expand("source $MYVIMRC"))
+	print(vim.fn.expand("$MYVIMRC sourced successfully"))
 end
 
 -- Mappings
@@ -61,5 +61,11 @@ vim.keymap.set("n", "<leader>hh", ":nohl<CR>", { silent = true })
 vim.keymap.set("n", "<leader>tae", ":Texplore<CR>")
 vim.keymap.set("n", "<leader>tao", ":tabo<CR>")
 vim.keymap.set("n", "<leader>tah", ":tabe %<CR>")
+
+-- Netrw
+
+vim.g.netrw_keepdir = 0
+
+-- Setup lazy.nvim
 
 require("config.lazy")

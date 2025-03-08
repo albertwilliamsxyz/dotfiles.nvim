@@ -51,9 +51,17 @@ return {
 					enable = true,
 					swap_next = {
 						["<leader>mp"] = "@parameter.inner",
+						["<leader>ma"] = "@attribute.inner",
+						["<leader>mb"] = "@block.inner",
+						["<leader>mf"] = "@function.inner",
+						["<leader>ms"] = "@statement.outer",
 					},
 					swap_previous = {
 						["<leader>mP"] = "@parameter.inner",
+						["<leader>mA"] = "@attribute.inner",
+						["<leader>mB"] = "@block.inner",
+						["<leader>mF"] = "@function.inner",
+						["<leader>mS"] = "@statement.outer",
 					},
 				},
 				move = {

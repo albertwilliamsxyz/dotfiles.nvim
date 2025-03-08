@@ -22,7 +22,18 @@ return {
 			},
 		})
 
-		lspconfig.cssls.setup({ capabilities = capabilities })
+		lspconfig.cssls.setup({
+			capabilities = capabilities,
+			settings = {
+				css = {
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
+		})
+
+		lspconfig.cssmodules_ls.setup({ capabilities = capabilities })
 
 		lspconfig.html.setup({ capabilities = capabilities })
 
