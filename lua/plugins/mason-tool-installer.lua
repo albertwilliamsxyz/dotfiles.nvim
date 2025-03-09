@@ -1,5 +1,8 @@
 return {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
+	dependencies = {
+		"williamboman/mason.nvim",
+	},
 	lazy = false,
 	opts = {
 		ensure_installed = {
@@ -12,6 +15,7 @@ return {
 			"emmet-language-server",
 			"misspell",
 			"codespell",
+			"chrome-debug-adapter",
 		},
 		run_on_start = true,
 	},
