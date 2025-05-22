@@ -47,6 +47,9 @@ vim.keymap.set("n", "<leader>qw", ":wq<CR>")
 vim.keymap.set("n", "<leader>qa", ":qa<CR>")
 vim.keymap.set("n", "<leader>qf", ":qa!<CR>")
 
+-- Copying the whole file
+vim.keymap.set("n", "<leader>ca", ":%y+<CR>")
+
 -- Reloads
 
 vim.keymap.set("n", "<leader>rc", reload_configuration)
