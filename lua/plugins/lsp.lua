@@ -15,6 +15,7 @@ return {
         {
                 "neovim/nvim-lspconfig",
                 lazy = false,
+                priority = 60,
                 dependencies = {
                         "WhoIsSethDaniel/mason-tool-installer.nvim",
                 },

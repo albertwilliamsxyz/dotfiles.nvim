@@ -1,4 +1,4 @@
--- Options
+-- General settings
 
 vim.opt.title = true
 
@@ -7,18 +7,31 @@ vim.opt.autochdir = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.showtabline = 2
-vim.opt.expandtab = true
+vim.opt.debug = "msg"
 
-vim.opt.colorcolumn = { 80 }
+-- Formatting
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 vim.opt.breakindent = true
+vim.opt.copyindent = true
+
+vim.opt.endofline = false
+vim.opt.fixendofline = false
+
+-- Display information
+
+vim.opt.showtabline = 2
+vim.opt.expandtab = true
 
 vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
+vim.opt.colorcolumn = { 80 }
+
+-- Completion
 
 -- vim.opt.completeopt = { "menu", "menuone", "popup", "noselect" }
 vim.opt.completeopt = {}
@@ -26,6 +39,7 @@ vim.opt.completeopt = {}
 -- Appearance
 
 vim.opt.termguicolors = true
+vim.opt.background = "light"
 
 -- Timeouts
 
@@ -35,11 +49,24 @@ vim.opt.timeoutlen = 10000
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 0
 
+-- Folding
+
+vim.opt.foldclose = "all"
+vim.opt.foldcolumn = "auto"
+
+-- Search
+
+vim.opt.ignorecase = true
+
+-- Split
+
+vim.opt.splitright = true
+
 -- Functions
 
 local function reload_configuration()
-	vim.cmd(vim.fn.expand("source $MYVIMRC"))
-	print(vim.fn.expand("$MYVIMRC sourced successfully"))
+    vim.cmd(vim.fn.expand("source $MYVIMRC"))
+    print(vim.fn.expand("$MYVIMRC sourced successfully"))
 end
 
 -- Mappings
