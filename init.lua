@@ -1,19 +1,27 @@
 -- Options
 
 vim.opt.title = true
+
+vim.opt.autochdir = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.showtabline = 2
 vim.opt.expandtab = true
 
+vim.opt.colorcolumn = { 80 }
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
+vim.opt.breakindent = true
+
 vim.opt.cursorline = true
 
-vim.opt.completeopt = { "menu", "menuone", "preview", "noselect" }
+-- vim.opt.completeopt = { "menu", "menuone", "popup", "noselect" }
+vim.opt.completeopt = {}
 
 -- Appearance
 
