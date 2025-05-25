@@ -20,6 +20,11 @@ return {
                                                         require("telescope.themes").get_dropdown({}),
                                                 },
                                         },
+                                        pickers = {
+                                                colorscheme = {
+                                                        enable_preview = true,
+                                                },
+                                        },
                                 })
                                 telescope.load_extension("ui-select")
                         end,
@@ -31,6 +36,7 @@ return {
                 { "<leader>fg", ":Telescope live_grep<CR>" },
                 { "<leader>fh", ":Telescope current_buffer_fuzzy_find<CR>" },
                 { "<leader>fk", ":Telescope keymaps<CR>" },
+                { "<leader>fc", ":Telescope colorscheme<CR>" },
         },
         config = function()
                 local telescope = require("telescope")
