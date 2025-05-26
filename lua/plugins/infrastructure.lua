@@ -10,7 +10,7 @@ return {
         {
                 "WhoIsSethDaniel/mason-tool-installer.nvim",
                 dependencies = {
-                        "williamboman/mason.nvim",
+                        "mason-org/mason.nvim",
                         {
                                 "mason-org/mason-lspconfig.nvim",
                                 dependencies = {
@@ -20,7 +20,7 @@ return {
                                 config = function()
                                         local mason_lspconfig = require("mason-lspconfig")
                                         mason_lspconfig.setup({
-                                                automatic_installation = true,
+                                                automatic_enable = true,
                                                 ensure_installed = {
                                                         "lua_ls",
                                                         "html",
@@ -35,67 +35,55 @@ return {
                                         local lspconfig = require("lspconfig")
                                         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-                                        mason_lspconfig.setup_handlers({
-                                                function(server_name)
-                                                        lspconfig[server_name].setup({ capabilities = capabilities })
-                                                end,
-                                                ["lua_ls"] = function()
-                                                        lspconfig.lua_ls.setup({
-                                                                capabilities = capabilities,
-                                                                settings = {
-                                                                        Lua = {
-                                                                                runtime = { version = "Lua 5.4", path = package.path },
-                                                                                workspace = {
-                                                                                        library = {
-                                                                                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                                                                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                                                                                        },
-                                                                                },
-                                                                                telemetry = { enable = false },
-                                                                        },
+                                        vim.lsp.config('lua_ls', {
+                                                capabilities = capabilities,
+                                                settings = {
+                                                        Lua = {
+                                                                runtime = { version = "LuaJit" },
+                                                                diagnostics = { globals = { 'vim', 'require' } },
+                                                                workspace = {
+                                                                        library = vim.api.nvim_get_runtime_file('', true),
                                                                 },
-                                                        })
-                                                end,
-                                                ["cssls"] = function()
-                                                        lspconfig.cssls.setup({
-                                                                capabilities = capabilities,
-                                                                settings = {
-                                                                        css = {
-                                                                                lint = {
-                                                                                        unknownAtRules = "ignore",
-                                                                                },
-                                                                        },
+                                                                telemetry = { enable = false },
+                                                        },
+                                                },
+                                        })
+
+                                        vim.lsp.config('cssls', {
+                                                capabilities = capabilities,
+                                                settings = {
+                                                        css = {
+                                                                lint = {
+                                                                        unknownAtRules = "ignore",
                                                                 },
-                                                        })
-                                                end,
-                                                ["emmet_language_server"] = function()
-                                                        lspconfig.emmet_language_server.setup({
-                                                                filetypes = {
-                                                                        "html",
-                                                                        "css",
-                                                                        "javascript",
-                                                                        "javascriptreact",
-                                                                        "typescriptreact",
-                                                                        "less",
-                                                                        "sass",
-                                                                        "scss",
-                                                                        "pug",
-                                                                },
-                                                                init_options = {
-                                                                        includeLanguages = {},
-                                                                        excludeLanguages = {},
-                                                                        extensionsPath = {},
-                                                                        preferences = {},
-                                                                        showAbbreviationSuggestions = true,
-                                                                        showExpandedAbbreviation = "always",
-                                                                        showSuggestionsAsSnippets = true,
-                                                                        variables = {},
-                                                                },
-                                                        })
-                                                end,
-                                                ["cssmodules_ls"] = function()
-                                                        lspconfig.cssmodules_ls.setup({ capabilities = capabilities })
-                                                end,
+                                                        },
+                                                },
+                                        })
+
+                                        vim.lsp.config('cssmodules_ls', { capabilities = capabilities })
+
+                                        vim.lsp.config('emmet_language_server', {
+                                                filetypes = {
+                                                        "html",
+                                                        "css",
+                                                        "javascript",
+                                                        "javascriptreact",
+                                                        "typescriptreact",
+                                                        "less",
+                                                        "sass",
+                                                        "scss",
+                                                        "pug",
+                                                },
+                                                init_options = {
+                                                        includeLanguages = {},
+                                                        excludeLanguages = {},
+                                                        extensionsPath = {},
+                                                        preferences = {},
+                                                        showAbbreviationSuggestions = true,
+                                                        showExpandedAbbreviation = "always",
+                                                        showSuggestionsAsSnippets = true,
+                                                        variables = {},
+                                                },
                                         })
                                 end,
                         },
@@ -103,7 +91,7 @@ return {
                                 "jay-babu/mason-null-ls.nvim",
                                 event = { "BufReadPre", "BufNewFile" },
                                 dependencies = {
-                                        "williamboman/mason.nvim",
+                                        "mason-org/mason.nvim",
                                         "nvimtools/none-ls.nvim",
                                 },
                                 config = function()
@@ -125,7 +113,7 @@ return {
                         {
                                 "jay-babu/mason-nvim-dap.nvim",
                                 dependencies = {
-                                        "williamboman/mason.nvim",
+                                        "mason-org/mason.nvim",
                                         "mfussenegger/nvim-dap",
                                 },
                         },
