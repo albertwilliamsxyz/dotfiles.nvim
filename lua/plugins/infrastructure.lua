@@ -9,6 +9,8 @@ return {
         },
         {
                 "WhoIsSethDaniel/mason-tool-installer.nvim",
+                lazy = false,
+                build = ':MasonToolsInstallSync',
                 dependencies = {
                         "mason-org/mason.nvim",
                         {

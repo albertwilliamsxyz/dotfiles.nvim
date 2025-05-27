@@ -1,5 +1,3 @@
--- TODO: Check later, I would like to reduce the dependencies as much as we can
--- Should I configure nvim-treesitter after or before the infrastructure?
 return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -11,6 +9,18 @@ return {
                 require("nvim-treesitter.install").prefer_git = true
 
                 require("nvim-treesitter.configs").setup({
+                        ensure_installed = {
+                                'bash',
+                                'c',
+                                'lua',
+                                'markdown',
+                                'markdown_inline',
+                                'python',
+                                'query',
+                                'tsx',
+                                'vim',
+                                'vimdoc',
+                        },
                         sync_install = true,
                         auto_install = true,
                         indent = { enable = true },

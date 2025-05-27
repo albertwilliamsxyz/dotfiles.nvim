@@ -37,7 +37,6 @@ return {
         {
                 "kylechui/nvim-surround",
                 version = "*",
-                event = "VeryLazy",
                 opts = {},
                 dependencies = {
                         "nvim-treesitter/nvim-treesitter",
