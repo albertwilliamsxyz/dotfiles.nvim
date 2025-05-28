@@ -20,6 +20,7 @@ return {
                                 'tsx',
                                 'vim',
                                 'vimdoc',
+                                'gitcommit'
                         },
                         sync_install = true,
                         auto_install = true,

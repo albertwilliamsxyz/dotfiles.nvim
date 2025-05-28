@@ -64,6 +64,14 @@ return {
 
                                         vim.lsp.config('cssmodules_ls', { capabilities = capabilities })
 
+                                        vim.lsp.config('html', { capabilities = capabilities })
+
+                                        vim.lsp.config('ts_ls', { capabilities = capabilities })
+
+                                        vim.lsp.config('jsonls', { capabilities = capabilities })
+
+                                        vim.lsp.config('pyright', { capabilities = capabilities })
+
                                         vim.lsp.config('emmet_language_server', {
                                                 filetypes = {
                                                         "html",
