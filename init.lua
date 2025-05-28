@@ -2,7 +2,7 @@
 
 vim.opt.title = true
 
-vim.opt.autochdir = true
+vim.opt.autochdir = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true
