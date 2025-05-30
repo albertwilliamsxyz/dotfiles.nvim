@@ -2,8 +2,6 @@
 
 vim.opt.title = true
 
-vim.opt.autochdir = false
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -65,8 +63,8 @@ vim.opt.splitright = true
 -- Functions
 
 local function reload_configuration()
-	vim.cmd(vim.fn.expand("source $MYVIMRC"))
-	print(vim.fn.expand("$MYVIMRC sourced successfully"))
+        vim.cmd(vim.fn.expand("source $MYVIMRC"))
+        print(vim.fn.expand("$MYVIMRC sourced successfully"))
 end
 
 -- Mappings
@@ -102,7 +100,7 @@ vim.keymap.set("n", "<leader>tah", ":tabe %<CR>")
 
 -- Netrw
 
-vim.g.netrw_keepdir = 0
+vim.g.netrw_keepdir = 1
 
 -- Setup lazy.nvim
 
