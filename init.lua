@@ -1,64 +1,59 @@
--- General settings
-
-vim.opt.title = true
-
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- Options
 
 vim.opt.debug = "msg"
 
--- Formatting
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.cursorcolumn = true
+vim.opt.cursorline = true
+vim.opt.colorcolumn = { 80 }
 
+vim.opt.autoread = true
+vim.opt.autowrite = false
+vim.opt.autochdir = false
+
+vim.opt.wrap = true
+vim.opt.wrapscan = false
+
+vim.opt.autoindent = true
 vim.opt.breakindent = true
 vim.opt.copyindent = true
 
-vim.opt.endofline = false
-vim.opt.fixendofline = false
-
--- Display information
+vim.opt.title = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 vim.opt.showtabline = 2
-vim.opt.expandtab = true
 
-vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
-
-vim.opt.colorcolumn = { 80 }
-
--- Completion
-
--- vim.opt.completeopt = { "menu", "menuone", "popup", "noselect" }
 vim.opt.completeopt = {}
 
--- Appearance
+vim.opt.scrolloff = 2
 
-vim.opt.termguicolors = true
-vim.opt.background = "light"
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
--- Timeouts
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.shiftround = true
+
+vim.opt.endofline = false
+vim.opt.fixendofline = false
+vim.opt.endoffile = false
+
+vim.opt.foldclose = "all"
+vim.opt.foldcolumn = "auto"
+
+vim.opt.ignorecase = true
+vim.opt.wildignorecase = true
 
 vim.opt.timeout = true
 vim.opt.timeoutlen = 10000
 
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 0
-
--- Folding
-
-vim.opt.foldclose = "all"
-vim.opt.foldcolumn = "auto"
-
--- Search
-
-vim.opt.ignorecase = true
-
--- Split
-
-vim.opt.splitright = true
 
 -- Functions
 
@@ -81,6 +76,7 @@ vim.keymap.set("n", "<leader>qa", ":qa<CR>")
 vim.keymap.set("n", "<leader>qf", ":qa!<CR>")
 
 -- Copying the whole file
+
 vim.keymap.set("n", "<leader>ca", ":%y+<CR>")
 
 -- Reloads
