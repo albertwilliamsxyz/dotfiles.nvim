@@ -12,15 +12,4 @@ return {
                         vim.cmd.colorscheme("base16-grayscale-dark")
                 end,
         },
-        {
-                "catgoose/nvim-colorizer.lua",
-                event = "BufReadPre",
-                opts = {},
-        },
-        {
-                "folke/which-key.nvim",
-                opts = {
-                        delay = 1500,
-                },
-        },
 }
