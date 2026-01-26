@@ -53,4 +53,5 @@ vim.opt.timeoutlen = 10000
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 0
 
-vim.g.netrw_keepdir = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
