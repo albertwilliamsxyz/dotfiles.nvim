@@ -1,27 +1,56 @@
--- Core Options
+vim.opt.debug = "msg"
 
--- Make line numbers default
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+
+vim.opt.cursorcolumn = true
+vim.opt.cursorline = true
+vim.opt.colorcolumn = { 80 }
+
+vim.opt.autoread = true
+vim.opt.autowrite = false
+vim.opt.autochdir = false
+
+vim.opt.wrap = true
+vim.opt.wrapscan = false
+
+vim.opt.autoindent = true
+vim.opt.breakindent = true
+vim.opt.copyindent = true
+
+vim.opt.title = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Tabs and Indentation
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.autoindent = true
+vim.opt.showtabline = 2
 
--- Search
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.completeopt = {}
 
--- UI Config
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
-vim.opt.cursorline = true
+vim.opt.scrolloff = 2
 
--- Clipboard
-vim.opt.clipboard = "unnamedplus"
-
--- Split behavior
-vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.shiftround = true
+
+vim.opt.endofline = false
+vim.opt.fixendofline = false
+vim.opt.endoffile = false
+
+vim.opt.foldclose = "all"
+vim.opt.foldcolumn = "auto"
+
+vim.opt.ignorecase = true
+vim.opt.wildignorecase = true
+
+vim.opt.timeout = true
+vim.opt.timeoutlen = 10000
+
+vim.opt.ttimeout = true
+vim.opt.ttimeoutlen = 0
+
+vim.g.netrw_keepdir = 1

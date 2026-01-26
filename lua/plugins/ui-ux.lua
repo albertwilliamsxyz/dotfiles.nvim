@@ -1,13 +1,22 @@
 return {
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+    "nvim-tree/nvim-web-devicons",
+    {
+        "RRethy/base16-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("base16-grayscale-light")
+        end,
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {
             options = {
-                theme = 'catppuccin'
+                theme = "base16",
             }
         }
-	},
+    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
