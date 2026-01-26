@@ -1,15 +1,14 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version = false, -- Last release is way too old
+        branch = "master",
         build = ":TSUpdate",
-        lazy = false, -- Recommended by nvim-treesitter to ensure correct loading
+        lazy = false,
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             "nvim-treesitter/nvim-treesitter-context",
         },
         config = function()
-            -- PERF: Optimize compilation
             require("nvim-treesitter.install").prefer_git = true
 
             require("nvim-treesitter.configs").setup({
@@ -37,14 +36,11 @@ return {
                     "toml",
                     "xml",
                 },
-                -- Auto install missing parsers when entering buffer
-                auto_install = true, 
-                sync_install = false, 
-                
+                auto_install = true,
+                sync_install = false,
                 indent = { enable = true },
                 highlight = {
                     enable = true,
-                    -- Disable vim regex highlighting to avoid duplicates
                     additional_vim_regex_highlighting = false,
                 },
                 incremental_selection = {
