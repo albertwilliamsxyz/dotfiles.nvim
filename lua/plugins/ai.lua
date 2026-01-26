@@ -1,22 +1,26 @@
 return {
-    {
-        "Exafunction/codeium.nvim",
-        enabled = false,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            require("codeium").setup({
-                enable_chat = true, 
-                virtual_text = {
-                    enabled = true,
-                    key_bindings = {
-                        accept = "<C-g>", 
-                        next = "<M-]>",
-                        prev = "<M-[>",
-                    }
-                }
-            })
-        end
-    }
+	{
+		"olimorris/codecompanion.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("codecompanion").setup({
+				strategies = {
+					chat = {
+						adapter = "copilot",
+					},
+					inline = {
+						adapter = "copilot",
+					},
+				},
+				adapters = {
+					copilot = function()
+						return require("codecompanion.adapters").extend("copilot", {})
+					end,
+				},
+			})
+		end,
+	},
 }

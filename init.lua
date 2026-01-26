@@ -4,6 +4,7 @@ require("config.lazy")
 -- Load options and keymaps BEFORE loading plugins
 require("config.options")
 require("config.keymaps")
+require("config.autocmds")
 
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
