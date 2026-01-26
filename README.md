@@ -88,4 +88,24 @@ Edit the *Concept* (Function, Class), not the *Syntax* (Characters).
 | :--- | :--- |
 | `s` / `S` | Leap (Teleport) |
 | `]]` / `[[` | Next/Prev Class |
-| `][` / `[]` | Next/Prev Class End |
+| 	`][` / `[]` | Next/Prev Class End |
+
+---
+
+## 4. Artificial Intelligence (Synapse AI)
+
+Your cognitive interface is augmented by **GitHub Copilot**, integrated directly into the editor.
+
+### 4.1. Ghost Text (Autocompletion)
+**"Anticipating Intent"**
+As you type, the AI predicts your next thought.
+*   **Trigger**: Automatic (Grey text overlay).
+*   **Accept**: `<C-a>` (Control + A).
+*   **Cycle**: `<Alt>+[` / `<Alt>+]` (Prev/Next).
+
+### 4.2. Cognitive Chat (CodeCompanion Agent)
+**"The Partner"**
+A conversational interface to discuss logic, refactor code, or generate complex structures.
+*   **Toggle Chat**: `<leader>a` (Space + A).
+*   **Inline Assist**: `:CodeCompanion` (Select text -> Ask).
+*   **Actions**: `<leader>cc` (Refactor/Explain menus).
