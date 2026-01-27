@@ -35,5 +35,6 @@
   "treesj": { "branch": "main", "commit": "186084dee5e9c8eec40f6e39481c723dd567cb05" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "72e160cb1ce8c0db2ac4315f77d97420a2f4223d" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
+  "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
