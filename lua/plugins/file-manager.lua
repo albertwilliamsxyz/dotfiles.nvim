@@ -26,8 +26,8 @@ return {
         },
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
-			{ "<leader>oil", "<CMD>Oil --float<CR>", desc = "Edit Directory (Float)" },
-			{ "<leader>or", "<CMD>Oil --float .<CR>", desc = "Resume Directory" },
+			{ "<leader>ee", "<CMD>Oil<CR>", desc = "Edit Directory" },
+			{ "<leader>er", "<CMD>Oil .<CR>", desc = "Edit Current Directory" },
 		},
 	},
 }
