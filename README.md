@@ -94,7 +94,7 @@ Edit the *Concept* (Function, Class), not the *Syntax* (Characters).
 
 ## 4. Artificial Intelligence (Synapse AI)
 
-Your cognitive interface is augmented by **GitHub Copilot**, integrated directly into the editor.
+Your cognitive interface is augmented by **GitHub Copilot** or **Codeium**, integrated directly into the editor. Based on your machine
 
 ### 4.1. Ghost Text (Autocompletion)
 **"Anticipating Intent"**

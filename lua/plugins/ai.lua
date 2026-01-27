@@ -1,24 +1,21 @@
 return {
 	{
-		"olimorris/codecompanion.nvim",
+		"Exafunction/codeium.nvim",
+		enabled = true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
 		},
 		config = function()
-			require("codecompanion").setup({
-				strategies = {
-					chat = {
-						adapter = "copilot",
+			require("codeium").setup({
+				enable_cmp_source = false,
+				enable_chat = true,
+				virtual_text = {
+					enabled = true,
+					key_bindings = {
+						accept = "<C-a>",
+						next = "<M-]>",
+						prev = "<M-[>",
 					},
-					inline = {
-						adapter = "copilot",
-					},
-				},
-				adapters = {
-					copilot = function()
-						return require("codecompanion.adapters").extend("copilot", {})
-					end,
 				},
 			})
 		end,
