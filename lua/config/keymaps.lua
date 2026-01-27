@@ -21,6 +21,3 @@ vim.keymap.set("n", "<leader>cr", utils.reload_configuration, { desc = "Config: 
 vim.keymap.set("n", "<leader>crf", "<cmd>e!<cr>", { desc = "Config: Reload File" })
 
 vim.keymap.set("n", "<leader>ya", "<cmd>%y+<cr>", { desc = "Yank: Whole File" })
-
-vim.keymap.set("n", "<leader>ccc", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "AI: Toggle Chat" })
-vim.keymap.set("n", "<leader>cca", "<cmd>CodeCompanionActions<cr>", { desc = "AI: Actions" })
