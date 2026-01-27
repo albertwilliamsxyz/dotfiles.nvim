@@ -1,5 +1,3 @@
-local utils = require("config.utils")
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -17,10 +15,6 @@ vim.keymap.set("n", "<leader>qw", "<cmd>wq<cr>", { desc = "Save and quit" })
 vim.keymap.set("n", "<leader>qa", "<cmd>qa<cr>", { desc = "Quit all" })
 vim.keymap.set("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Force quit all" })
 
-vim.keymap.set("n", "<leader>cr", utils.reload_configuration, { desc = "Config: Reload" })
 vim.keymap.set("n", "<leader>crf", "<cmd>e!<cr>", { desc = "Config: Reload File" })
 
 vim.keymap.set("n", "<leader>ya", "<cmd>%y+<cr>", { desc = "Yank: Whole File" })
-
-vim.keymap.set("n", "<leader>ccc", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "AI: Toggle Chat" })
-vim.keymap.set("n", "<leader>cca", "<cmd>CodeCompanionActions<cr>", { desc = "AI: Actions" })

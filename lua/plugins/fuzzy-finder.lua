@@ -15,6 +15,7 @@ return {
 		},
 		keys = {
 			{ "<leader>fa", "<cmd>Telescope<CR>", desc = "Telescope All" },
+			{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffers" },
 			{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
 			{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep" },
 			{ "<leader>fh", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Buffer Fuzzy" },

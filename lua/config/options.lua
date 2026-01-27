@@ -22,7 +22,7 @@ vim.opt.title = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 
 vim.opt.completeopt = {}
 
