@@ -41,17 +41,17 @@ vim.opt.endofline = false
 vim.opt.fixendofline = false
 vim.opt.endoffile = false
 
-vim.opt.foldclose = "all"
+vim.opt.foldlevel = 99
 vim.opt.foldcolumn = "auto"
 
 vim.opt.ignorecase = true
 vim.opt.wildignorecase = true
 
 vim.opt.timeout = true
-vim.opt.timeoutlen = 10000
+vim.opt.timeoutlen = 500
 
 vim.opt.ttimeout = true
-vim.opt.ttimeoutlen = 0
+vim.opt.ttimeoutlen = 10
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
