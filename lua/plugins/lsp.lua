@@ -41,40 +41,7 @@ return {
 		end,
 	},
 
-	-- 2. Completion (Blink.cmp - Faster than nvim-cmp)
-	{
-		"saghen/blink.cmp",
-		dependencies = "rafamadriz/friendly-snippets",
-		version = "*",
-		opts = {
-			keymap = { 
-                preset = "default",
-                ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-                ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-                ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-                ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
-            },
-			appearance = {
-				use_nvim_cmp_as_default = true,
-				nerd_font_variant = "mono",
-			},
-			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
-			},
-            cmdline = {
-                sources = function()
-                    local type = vim.fn.getcmdtype()
-                    if type == "/" or type == "?" then return { "buffer" } end
-                    if type == ":" then return { "cmdline", "path" } end
-                    return {}
-                end,
-            },
-            completion = {
-                documentation = { auto_show = true, auto_show_delay_ms = 500 },
-                list = { selection = { preselect = false, auto_insert = true } },
-            },
-		},
-	},
+
 
 	-- 3. LSP Configuration (The Brain)
 	{
@@ -146,6 +113,39 @@ return {
 							},
 						})
 					end,
+
+                    ["pyright"] = function()
+                        lspconfig.pyright.setup({
+                            capabilities = capabilities,
+                            before_init = function(_, config)
+                                -- Automatically find the virtualenv
+                                local function get_venv_path(root_dir)
+                                    local match = vim.fn.glob(root_dir .. "/.venv")
+                                    if match ~= "" then return match end
+                                    match = vim.fn.glob(root_dir .. "/.env")
+                                    if match ~= "" then return match end
+                                    match = vim.fn.glob(root_dir .. "/venv")
+                                    if match ~= "" then return match end
+                                    return nil
+                                end
+
+                                local root_dir = config.root_dir or vim.fn.getcwd()
+                                local venv = get_venv_path(root_dir)
+                                if venv then
+                                    config.settings.python.pythonPath = venv .. "/bin/python"
+                                end
+                            end,
+                            settings = {
+                                python = {
+                                    analysis = {
+                                        autoSearchPaths = true,
+                                        useLibraryCodeForTypes = true,
+                                        autoImportCompletions = true,
+                                    },
+                                },
+                            },
+                        })
+                    end,
 				},
 			})
 
