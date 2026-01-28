@@ -1,5 +1,18 @@
 return {
-    "nvim-tree/nvim-web-devicons",
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+        opts = {
+            override = {
+                css = {
+                    icon = "",
+                    color = "#563d7c",
+                    cterm_color = "65",
+                    name = "Css",
+                },
+            },
+        },
+    },
     {
         "rktjmp/lush.nvim",
         lazy = true,

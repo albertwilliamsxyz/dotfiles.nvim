@@ -1,5 +1,4 @@
 return {
-	-- 1. Tool Installer (Ensures everything is downloaded)
 	{
 		"mason-org/mason.nvim",
 		lazy = false,
@@ -8,6 +7,7 @@ return {
 			{ "<leader>pmm", ":Mason<CR>" },
 		},
 	},
+
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = {
@@ -17,7 +17,6 @@ return {
 			require("mason").setup()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
-					-- LSPs
 					"lua_ls",
 					"html",
 					"cssls",
@@ -26,24 +25,16 @@ return {
 					"jsonls",
 					"emmet_language_server",
 					"pyright",
-
-					-- Formatters/Linters (used by conform.nvim)
 					"stylua",
 					"eslint_d",
 					"prettierd",
 					"codespell",
-
-					-- Debuggers
-					"chrome-debug-adapter",
 					"js-debug-adapter",
 				},
 			})
 		end,
 	},
 
-
-
-	-- 3. LSP Configuration (The Brain)
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -55,10 +46,9 @@ return {
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 
-			-- Setup LSPs via Mason Handlers
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
-				ensure_installed = {}, -- handled by mason-tool-installer
+				ensure_installed = {},
 				handlers = {
 					function(server_name)
 						lspconfig[server_name].setup({
@@ -149,7 +139,6 @@ return {
 				},
 			})
 
-			-- 4. Keymaps (Restoring the "Old" robustness)
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
@@ -165,7 +154,7 @@ return {
 					-- Actions
 					vim.keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, options)
 					vim.keymap.set("n", "<leader>lca", vim.lsp.buf.code_action, options)
-					vim.keymap.set("n", "<leader>lft", vim.lsp.buf.format, options) -- Manual format fallback
+					vim.keymap.set("n", "<leader>lft", vim.lsp.buf.format, options)
 
 					-- Diagnostics
 					vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, options)
