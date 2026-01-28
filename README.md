@@ -126,3 +126,25 @@ We are evolving Synapse to be more "fun" (Joyful), "fast" (Efficient), and "bett
 | `<C-a>` | Accept Ghost Text |
 | `<C-]>` | Dismiss Ghost Text |
 | `<leader>cc` | AI Actions Menu |
+
+---
+
+## 5. The Art of Context (Harpoon)
+Harpoon is your **Short-Term Memory**. Unlike buffers (History), Harpoon is for the **Working Set**.
+
+### Essential Keymaps
+*   `<leader>a`: **Append** file to Harpoon (Pin it).
+*   `<C-e>`: **Edit** the list (Quick Menu).
+*   `<C-1>` / `<C-2>` / `<C-3>` / `<C-4>`: **Jump** to file 1-4 instantly.
+
+### 10 Tips for Effective Usage
+1.  **The "Rule of 4"**: Only pin 4 files max. If you need 5, you are doing too much at once.
+2.  **Mental Mapping**: Bind the slot to the mental concept. File 1 = Interface, File 2 = Implementation, File 3 = Tests. Always.
+3.  **Muscle Memory**: Stop reading filenames. Train your fingers to know that `<C-1>` is *The Model*.
+4.  **Clear Often**: When the task is done, clear the list. Start fresh. Do not let Harpoon become a dusty backlog.
+5.  **The "Anchor"**: Keep one file (usually Main or Config) always in Slot 1. It grounds you.
+6.  **Context Switching**: Use Harpoon to switch contexts entirely. Working on Backend? Pin those 3 files. Switch to Frontend? Clear and pin the UI components.
+7.  **No Searching**: If you are searching (`<leader>ff`) for the same file twice in 5 minutes, you have failed. Harpoon it.
+8.  **The Toggle**: Use `<C-e>` to visualize your mental stack. If it looks cluttered, your mind is cluttered.
+9.  **Project Hopping**: Harpoon lists are per-project. Trust that when you return to a project, your "mind" is exactly where you left it.
+10. **Flow State**: The goal is to move at the speed of thought. "I need to check the test" -> `<C-3>`. No "Check test" -> "Search file" -> "Type name" -> "Enter".
