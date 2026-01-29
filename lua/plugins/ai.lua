@@ -37,6 +37,11 @@ return {
 			vim.api.nvim_set_hl(0, "CodeCompanionChatToolSuccess", { fg = "#006600", bg = "#d0f0d0", bold = true })
 			vim.api.nvim_set_hl(0, "CodeCompanionChatToolError", { fg = "#990000", bg = "#f5e0e0", bold = true })
 
+			-- Chat header highlights (for icons like check marks, status markers)
+			vim.api.nvim_set_hl(0, "CodeCompanionChatHeader", { fg = "#004400", bold = true })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatAgentHeader", { fg = "#004400", bold = true })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatVariable", { fg = "#004400", bold = true })
+
 			-- Spell highlight (treesitter @spell is too faint on light themes)
 			vim.api.nvim_set_hl(0, "@spell", { fg = "#005500", undercurl = false })
 			vim.api.nvim_set_hl(0, "@spell.markdown", { fg = "#005500" })
@@ -53,7 +58,7 @@ return {
 					chat = {
 						tools = {
 							opts = {
-								auto_submit_errors = true,
+								auto_submit_errors = false,
 								auto_submit_success = true,
 							},
 							["cmd_runner"] = {
