@@ -14,11 +14,21 @@ return {
 			vim.api.nvim_set_hl(0, "CodeCompanionChatDiffAdd", { fg = "#116611", bg = "#d0f0d0", bold = true })
 			vim.api.nvim_set_hl(0, "CodeCompanionChatDiffDelete", { fg = "#881111", bg = "#f0d0d0" })
 			vim.api.nvim_set_hl(0, "CodeCompanionChatDiffChange", { fg = "#886611", bg = "#f0f0d0" })
-			-- Also override standard Diff highlight groups for inline diffs
+
+			-- Standard Vim diff highlights (used in split diff views)
 			vim.api.nvim_set_hl(0, "DiffAdd", { fg = "#116611", bg = "#c8e6c8", bold = true })
 			vim.api.nvim_set_hl(0, "DiffDelete", { fg = "#991111", bg = "#f0d0d0" })
 			vim.api.nvim_set_hl(0, "DiffChange", { fg = "#886611", bg = "#f5f5d0" })
 			vim.api.nvim_set_hl(0, "DiffText", { fg = "#116611", bg = "#a0d0a0", bold = true })
+
+			-- CodeCompanion virtual text highlights (inline suggestions)
+			vim.api.nvim_set_hl(0, "CodeCompanionVirtualText", { fg = "#116611", bg = "#e8f5e8", italic = true })
+			vim.api.nvim_set_hl(0, "CodeCompanionVirtualTextInfo", { fg = "#0066aa", bg = "#e8f0f8" })
+
+			-- Added/Changed lines in inline mode
+			vim.api.nvim_set_hl(0, "Added", { fg = "#116611", bg = "#d5f0d5" })
+			vim.api.nvim_set_hl(0, "Changed", { fg = "#886611", bg = "#f8f8d8" })
+			vim.api.nvim_set_hl(0, "Removed", { fg = "#991111", bg = "#f5d5d5" })
 
 			require("codecompanion").setup({
 				display = {
