@@ -50,17 +50,16 @@ return {
 				display = {
 					chat = {
 						window = {
-							layout = "horizontal", -- horizontal = bottom/top split
+							layout = "vertical",
 							position = "bottom",
-							height = 0.3, -- 30% of screen
+							width = 0.35,
 						},
-						auto_scroll = false, -- Don't scroll to end when agent responds
 					},
 					diff = {
 						enabled = true,
 						close_chat_at = 240,
-						layout = "vertical",
-						ratio = 0.3,
+						layout = "horizontal",
+						ratio = 0.5,
 					},
 				},
 				interactions = {
