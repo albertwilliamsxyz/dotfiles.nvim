@@ -37,14 +37,16 @@ return {
 			vim.api.nvim_set_hl(0, "CodeCompanionChatToolSuccess", { fg = "#006600", bg = "#d0f0d0", bold = true })
 			vim.api.nvim_set_hl(0, "CodeCompanionChatToolError", { fg = "#990000", bg = "#f5e0e0", bold = true })
 
+			-- Spell highlight (treesitter @spell is too faint on light themes)
+			vim.api.nvim_set_hl(0, "@spell", { fg = "#005500", undercurl = false })
+			vim.api.nvim_set_hl(0, "@spell.markdown", { fg = "#005500" })
+
 			require("codecompanion").setup({
 				display = {
 					diff = {
 						enabled = true,
 						close_chat_at = 240,
 						layout = "vertical",
-						opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-						provider = "default",
 					},
 				},
 				interactions = {
