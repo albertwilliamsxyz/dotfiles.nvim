@@ -30,6 +30,13 @@ return {
 			vim.api.nvim_set_hl(0, "Changed", { fg = "#886611", bg = "#f8f8d8" })
 			vim.api.nvim_set_hl(0, "Removed", { fg = "#991111", bg = "#f5d5d5" })
 
+			-- Tool output highlights (the green "Editing..." messages)
+			vim.api.nvim_set_hl(0, "CodeCompanionChatTool", { fg = "#006600", bold = true })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatToolInput", { fg = "#006600", bg = "#e0f0e0" })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatToolOutput", { fg = "#005500", bg = "#e8f5e8" })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatToolSuccess", { fg = "#006600", bg = "#d0f0d0", bold = true })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatToolError", { fg = "#990000", bg = "#f5e0e0", bold = true })
+
 			require("codecompanion").setup({
 				display = {
 					diff = {
