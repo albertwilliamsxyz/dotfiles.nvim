@@ -10,7 +10,26 @@ return {
 			{ "<leader>cca", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "AI: Actions" },
 		},
 		config = function()
+			-- Better highlight groups for diffs on light colorschemes
+			vim.api.nvim_set_hl(0, "CodeCompanionChatDiffAdd", { fg = "#116611", bg = "#d0f0d0", bold = true })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatDiffDelete", { fg = "#881111", bg = "#f0d0d0" })
+			vim.api.nvim_set_hl(0, "CodeCompanionChatDiffChange", { fg = "#886611", bg = "#f0f0d0" })
+			-- Also override standard Diff highlight groups for inline diffs
+			vim.api.nvim_set_hl(0, "DiffAdd", { fg = "#116611", bg = "#c8e6c8", bold = true })
+			vim.api.nvim_set_hl(0, "DiffDelete", { fg = "#991111", bg = "#f0d0d0" })
+			vim.api.nvim_set_hl(0, "DiffChange", { fg = "#886611", bg = "#f5f5d0" })
+			vim.api.nvim_set_hl(0, "DiffText", { fg = "#116611", bg = "#a0d0a0", bold = true })
+
 			require("codecompanion").setup({
+				display = {
+					diff = {
+						enabled = true,
+						close_chat_at = 240,
+						layout = "vertical",
+						opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
+						provider = "default",
+					},
+				},
 				interactions = {
 					chat = {
 						tools = {
