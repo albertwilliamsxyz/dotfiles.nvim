@@ -51,7 +51,8 @@ return {
 					diff = {
 						enabled = true,
 						close_chat_at = 240,
-						layout = "vertical",
+						layout = "horizontal",
+						ratio = 0.3,
 					},
 				},
 				interactions = {
