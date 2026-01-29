@@ -101,6 +101,15 @@ return {
 				strategies = {
 					chat = {
 						adapter = "copilot",
+						opts = {
+							send_code = true,
+						},
+						system_prompt = function(props)
+							return "You are an AI assistant in Neovim. "
+								.. "You have access to the current buffer content automatically. "
+								.. "You can also use tools like @files to read/edit files and @cmd_runner to run commands if needed. "
+								.. "Please answer the user's request using this context, as a @full_stack_dev, with @web_search capacity."
+						end,
 					},
 					inline = {
 						adapter = "copilot",
