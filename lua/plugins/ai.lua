@@ -48,10 +48,18 @@ return {
 
 			require("codecompanion").setup({
 				display = {
+					chat = {
+						window = {
+							layout = "horizontal", -- horizontal = bottom/top split
+							position = "bottom",
+							height = 0.3, -- 30% of screen
+						},
+						auto_scroll = false, -- Don't scroll to end when agent responds
+					},
 					diff = {
 						enabled = true,
 						close_chat_at = 240,
-						layout = "horizontal",
+						layout = "vertical",
 						ratio = 0.3,
 					},
 				},
