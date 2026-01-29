@@ -72,7 +72,12 @@ return {
 							},
 							["cmd_runner"] = {
 								opts = {
-									require_approval_before = true,
+									requires_approval = true,
+								},
+							},
+							["files"] = {
+								opts = {
+									requires_approval = false,
 								},
 							},
 						},
