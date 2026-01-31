@@ -8,18 +8,52 @@ return {
 	},
 	-- reviewed
 	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
+		"monaqa/dial.nvim",
+		keys = {
+			{
+				"<C-a>",
+				function()
+					return require("dial.map").inc_normal()
+				end,
+				expr = true,
+				desc = "Increment",
+			},
+			{
+				"<C-x>",
+				function()
+					return require("dial.map").dec_normal()
+				end,
+				expr = true,
+				desc = "Decrement",
+			},
+		},
+		config = function()
+			local augend = require("dial.augend")
+			require("dial.config").augends:register_group({
+				default = {
+					augend.integer.alias.decimal,
+					augend.integer.alias.hex,
+					augend.date.alias["%Y/%m/%d"],
+					augend.constant.alias.bool,
+					augend.semver.alias.semver,
+				},
+			})
+		end,
+	},
+	{
+		"gbprod/yanky.nvim",
 		opts = {},
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-treesitter/nvim-treesitter-textobjects",
+		keys = {
+            { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
+            { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+            { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+            { "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
+            { "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
 		},
 	},
-	-- reviewed, I love these kind of plugins
-	{
-		"Wansmer/treesj",
+    -- reviewed, I love these kind of plugins
+    {
+        "Wansmer/treesj",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {
 			use_default_keymaps = false,
