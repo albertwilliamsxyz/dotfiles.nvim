@@ -1,7 +1,6 @@
 vim.opt.debug = "msg"
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
 
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
