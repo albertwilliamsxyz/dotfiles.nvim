@@ -7,7 +7,10 @@ return {
         lazy = false,
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "nvim-treesitter/nvim-treesitter-context",
+            {
+                "nvim-treesitter/nvim-treesitter-context",
+                opts = { mode = "cursor", max_lines = 3 },
+            },
         },
         config = function()
             require("nvim-treesitter.install").prefer_git = true

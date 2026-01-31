@@ -1,6 +1,17 @@
 return {
 	-- reviewed
 	{
+		"stevearc/aerial.nvim",
+		opts = {},
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		keys = {
+			{ "<leader>a", "<cmd>AerialToggle<cr>", desc = "Aerial (Symbols)" },
+		},
+	},
+	{
 		"mason-org/mason.nvim",
 		lazy = false,
 		opts = {},

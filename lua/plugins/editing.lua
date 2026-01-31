@@ -51,6 +51,42 @@ return {
             { "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
 		},
 	},
+	{
+		"gbprod/substitute.nvim",
+		opts = {},
+		keys = {
+			{
+				"s",
+				function()
+					require("substitute").operator()
+				end,
+				mode = { "n", "x" },
+				desc = "Substitute Operator",
+			},
+			{
+				"ss",
+				function()
+					require("substitute").line()
+				end,
+				mode = { "n" },
+				desc = "Substitute Line",
+			},
+			{
+				"S",
+				function()
+					require("substitute").eol()
+				end,
+				mode = { "n" },
+				desc = "Substitute EOL",
+			},
+		},
+	},
+	{
+		"mbbill/undotree",
+		keys = {
+			{ "<leader>u", ":UndotreeToggle<CR>", desc = "Toggle UndoTree" },
+		},
+	},
     -- reviewed, I love these kind of plugins
     {
         "Wansmer/treesj",
