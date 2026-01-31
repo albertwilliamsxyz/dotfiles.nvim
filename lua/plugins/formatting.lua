@@ -1,4 +1,5 @@
 return {
+  -- generate documentation for this one
   {
     "stevearc/conform.nvim",
     opts = {

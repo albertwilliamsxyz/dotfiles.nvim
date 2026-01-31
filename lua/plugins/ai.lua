@@ -1,4 +1,5 @@
 return {
+	-- reviewed
 	{
 		"olimorris/codecompanion.nvim",
 		dependencies = {
@@ -117,6 +118,7 @@ return {
 			})
 		end,
 	},
+	-- reviewed
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",

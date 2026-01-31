@@ -1,4 +1,5 @@
 return {
+  -- reviewed, please generate documentation about this one
   {
     'saghen/blink.cmp',
     version = '*',

@@ -1,4 +1,5 @@
 return {
+	-- reviewed, I want to revisit the keybindings to check if this is the best option
 	{
 		url = "https://codeberg.org/andyg/leap.nvim",
 		dependencies = {

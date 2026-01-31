@@ -1,4 +1,7 @@
 return {
+	-- reviewed, create documentation for this one
+	-- I want to use this as a fundamental plugin and whenever possible
+	-- manage the plugins via telescope
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = false,
@@ -20,6 +23,7 @@ return {
 			{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep" },
 			{ "<leader>fh", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Buffer Fuzzy" },
 			{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Keymaps" },
+			{ "<leader>fn", "<cmd>Telescope notify<CR>", desc = "Notifications" },
 			{ "<leader>fc", "<cmd>Telescope colorscheme<CR>", desc = "Colorscheme" },
 		},
 		config = function()

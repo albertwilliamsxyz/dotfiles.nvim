@@ -1,4 +1,5 @@
 return {
+    -- reviewed, one of my favorite plugins
     {
         "nvim-treesitter/nvim-treesitter",
         branch = "master",

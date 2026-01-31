@@ -1,4 +1,5 @@
 return {
+	-- reviewed
 	{
 		"mason-org/mason.nvim",
 		lazy = false,
@@ -7,7 +8,9 @@ return {
 			{ "<leader>pmm", ":Mason<CR>" },
 		},
 	},
-
+	-- reviewed
+	-- QUESTION, if I have already declared above mason-org/mason.nvim
+	-- and it has opts set, do I need to call mason setup here?
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = {
@@ -36,6 +39,12 @@ return {
 	},
 
 	{
+		-- What is the relation between mason-lspconfig.nvim and nvim-lspconfig?
+		-- mason-lspconfig is being setup here, could I define it above?
+		-- so that I have the mason-lspconfig on one hand...
+		-- Or do I have to have it here because this is the first part of the
+		-- process in which I have access to the lspconfig object which is
+		-- necessary for the lspconfig with mason?
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
@@ -46,6 +55,8 @@ return {
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 
+			-- I want you to generate a new document with more details
+			-- about each one of the handlers we have, and what else we could add
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
 				ensure_installed = {},
@@ -139,6 +150,7 @@ return {
 				},
 			})
 
+			-- lets review the keybindings, I want to make sure they are the best option
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)

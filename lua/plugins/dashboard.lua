@@ -1,4 +1,6 @@
 return {
+    -- reviewed, generate documentation for this one
+    -- I want to improve it later
     {
         'goolord/alpha-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },

@@ -1,5 +1,8 @@
 return {
     {
+        -- reviewed
+        -- https://github.com/nvim-tree/nvim-web-devicons
+        -- NvimWebDeviconsHiTest
         "nvim-tree/nvim-web-devicons",
         lazy = true,
         opts = {
@@ -13,11 +16,13 @@ return {
             },
         },
     },
-    {
+    {   
+        -- reviewed, I might need to create my own colorscheme
         "rktjmp/lush.nvim",
         lazy = true,
     },
     {
+        -- current color palette
         "RRethy/base16-nvim",
         lazy = false,
         priority = 1000,
@@ -26,8 +31,18 @@ return {
         end,
     },
     {
+        -- EXPLAIN CONFIGURATION
+        -- reviewed, I saw that I'm using also nvim-notify and nui.nvim but
+        -- I want to configure them in this file but not necessarily
+        -- declaring them here, I want to have specific configurations
+        -- for nvim-notify and nui.nvim but keeping them all under
+        -- this file for centralization
         "folke/noice.nvim",
         event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
         opts = {
             lsp = {
                 override = {
@@ -80,12 +95,9 @@ return {
                 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { link = "Normal" })
             end,
         },
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
     },
     {
+        -- reviewed
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {
@@ -97,6 +109,7 @@ return {
         }
     },
     {
+        -- reviewed
         "folke/which-key.nvim",
         event = "VeryLazy",
         keys = {
