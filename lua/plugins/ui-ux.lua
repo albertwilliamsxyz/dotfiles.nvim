@@ -5,16 +5,7 @@ return {
         -- NvimWebDeviconsHiTest
         "nvim-tree/nvim-web-devicons",
         lazy = true,
-        opts = {
-            override = {
-                css = {
-                    icon = "",
-                    color = "#563d7c",
-                    cterm_color = "65",
-                    name = "Css",
-                },
-            },
-        },
+        opts = {},
     },
     {   
         -- reviewed, I might need to create my own colorscheme
@@ -121,5 +112,46 @@ return {
                 desc = "Buffer Local Keymaps (which-key)",
             },
         },
-    }
+    },
+    -- not reviewed
+    {
+        "3rd/image.nvim",
+        ft = { "markdown", "norg" },
+        opts = {
+            backend = "kitty",
+            integrations = {
+                markdown = {
+                    enabled = true,
+                    clear_in_insert_mode = false,
+                    only_render_image_at_cursor = false,
+                },
+            },
+        },
+    },
+    -- not reviewed
+    {
+        "folke/twilight.nvim",
+        keys = {
+            { "<leader>tz", ":Twilight<CR>", desc = "Toggle Twilight (Focus Mode)" },
+        },
+        opts = {},
+    },
+    -- reviewed
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        event = "BufReadPost",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+    },
+    -- reviewed
+    {
+        "NvChad/nvim-colorizer.lua",
+        event = "BufReadPost",
+        opts = {
+            user_default_options = {
+                css = true,
+                tailwind = true,
+                mode = "background",
+            },
+        },
+    },
 }
