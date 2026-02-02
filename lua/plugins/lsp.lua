@@ -105,7 +105,7 @@ return {
 							},
 						})
 					end,
-					
+
 					["cssls"] = function()
 						lspconfig.cssls.setup({
 							capabilities = capabilities,
@@ -115,38 +115,44 @@ return {
 						})
 					end,
 
-                    ["pyright"] = function()
-                        lspconfig.pyright.setup({
-                            capabilities = capabilities,
-                            before_init = function(_, config)
-                                -- Automatically find the virtualenv
-                                local function get_venv_path(root_dir)
-                                    local match = vim.fn.glob(root_dir .. "/.venv")
-                                    if match ~= "" then return match end
-                                    match = vim.fn.glob(root_dir .. "/.env")
-                                    if match ~= "" then return match end
-                                    match = vim.fn.glob(root_dir .. "/venv")
-                                    if match ~= "" then return match end
-                                    return nil
-                                end
+					["pyright"] = function()
+						lspconfig.pyright.setup({
+							capabilities = capabilities,
+							before_init = function(_, config)
+								-- Automatically find the virtualenv
+								local function get_venv_path(root_dir)
+									local match = vim.fn.glob(root_dir .. "/.venv")
+									if match ~= "" then
+										return match
+									end
+									match = vim.fn.glob(root_dir .. "/.env")
+									if match ~= "" then
+										return match
+									end
+									match = vim.fn.glob(root_dir .. "/venv")
+									if match ~= "" then
+										return match
+									end
+									return nil
+								end
 
-                                local root_dir = config.root_dir or vim.fn.getcwd()
-                                local venv = get_venv_path(root_dir)
-                                if venv then
-                                    config.settings.python.pythonPath = venv .. "/bin/python"
-                                end
-                            end,
-                            settings = {
-                                python = {
-                                    analysis = {
-                                        autoSearchPaths = true,
-                                        useLibraryCodeForTypes = true,
-                                        autoImportCompletions = true,
-                                    },
-                                },
-                            },
-                        })
-                    end,
+								local root_dir = config.root_dir or vim.fn.getcwd()
+								local venv = get_venv_path(root_dir)
+								if venv then
+									config.settings.python.pythonPath = venv .. "/bin/python"
+								end
+							end,
+							settings = {
+								python = {
+									analysis = {
+										autoSearchPaths = true,
+										useLibraryCodeForTypes = true,
+										autoImportCompletions = true,
+									},
+								},
+							},
+						})
+					end,
 				},
 			})
 
@@ -172,6 +178,10 @@ return {
 					vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, options)
 					vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, options)
 					vim.keymap.set("i", "<C-S>", vim.lsp.buf.signature_help, options)
+
+					vim.diagnostic.config({
+						float = { border = "rounded" },
+					})
 				end,
 			})
 		end,

@@ -1,5 +1,4 @@
 return {
-	-- reviewed, I want to revisit the keybindings to check if this is the best option
 	{
 		url = "https://codeberg.org/andyg/leap.nvim",
 		dependencies = {
@@ -19,7 +18,7 @@ return {
 			},
 			{
 				"<leader>S",
-				function() 
+				function()
 					require("leap").leap({ backward = true })
 				end,
 				mode = { "n", "x", "o" },
@@ -39,7 +38,6 @@ return {
 			},
 		},
 	},
-	-- reviewed
 	{
 		"chrisgrieser/nvim-spider",
 		keys = {

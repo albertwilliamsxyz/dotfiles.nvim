@@ -2,13 +2,16 @@ vim.opt.debug = "msg"
 
 vim.opt.termguicolors = true
 
-vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
-vim.opt.colorcolumn = { 80 }
+-- vim.opt.cursorcolumn = true
+-- vim.opt.colorcolumn = { 80 }
 
 vim.opt.autoread = true
 vim.opt.autowrite = false
 vim.opt.autochdir = false
+
+vim.opt.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undo"
 
 vim.opt.wrap = true
 vim.opt.wrapscan = false

@@ -127,21 +127,6 @@ return {
 			},
 		},
 	},
-	-- not reviewed
-	{
-		"gbprod/substitute.nvim",
-		keys = {
-			{ "s", function() require("substitute").operator() end, desc = "Substitute" },
-			{ "ss", function() require("substitute").line() end, desc = "Substitute line" },
-			{ "S", function() require("substitute").eol() end, desc = "Substitute to EOL" },
-			{ "s", function() require("substitute").visual() end, mode = "x", desc = "Substitute (visual)" },
-			{ "sx", function() require("substitute.exchange").operator() end, desc = "Exchange" },
-			{ "sxx", function() require("substitute.exchange").line() end, desc = "Exchange line" },
-			{ "X", function() require("substitute.exchange").visual() end, mode = "x", desc = "Exchange (visual)" },
-		},
-		opts = {},
-	},
-	-- not reviewed
 	{
 		"mbbill/undotree",
 		keys = {

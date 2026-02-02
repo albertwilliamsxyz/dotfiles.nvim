@@ -1,157 +1,151 @@
 return {
-    {
-        -- reviewed
-        -- https://github.com/nvim-tree/nvim-web-devicons
-        -- NvimWebDeviconsHiTest
-        "nvim-tree/nvim-web-devicons",
-        lazy = true,
-        opts = {},
-    },
-    {   
-        -- reviewed, I might need to create my own colorscheme
-        "rktjmp/lush.nvim",
-        lazy = true,
-    },
-    {
-        -- current color palette
-        "RRethy/base16-nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("base16-grayscale-light")
-        end,
-    },
-    {
-        -- EXPLAIN CONFIGURATION
-        -- reviewed, I saw that I'm using also nvim-notify and nui.nvim but
-        -- I want to configure them in this file but not necessarily
-        -- declaring them here, I want to have specific configurations
-        -- for nvim-notify and nui.nvim but keeping them all under
-        -- this file for centralization
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        },
-        opts = {
-            lsp = {
-                override = {
-                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                    ["vim.lsp.util.stylize_markdown"] = true,
-                    ["cmp.entry.get_documentation"] = true,
-                },
-            },
-            presets = {
-                bottom_search = false,
-                command_palette = true,
-                long_message_to_split = true,
-                inc_rename = false,
-                lsp_doc_border = false,
-            },
-            views = {
-                cmdline_popup = {
-                    border = {
-                        style = "rounded",
-                    },
-                    filter_options = {},
-                    win_options = {
-                        winhighlight = "NormalFloat:Normal,FloatBorder:FloatBorder",
-                    },
-                },
-                popupmenu = {
-                    relative = "editor",
-                    position = {
-                        row = 8,
-                        col = "50%",
-                    },
-                    size = {
-                        width = 60,
-                        height = 10,
-                    },
-                    border = {
-                        style = "rounded",
-                        padding = { 0, 1 },
-                    },
-                    win_options = {
-                        winhighlight = { Normal = "Normal", FloatBorder = "FloatBorder" },
-                    },
-                },
-            },
-            config = function(_, opts)
-                require("noice").setup(opts)
-                vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "FloatBorder" })
-                vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { link = "Normal" })
-                vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
-                vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { link = "Normal" })
-            end,
-        },
-    },
-    {
-        -- reviewed
-        "nvim-lualine/lualine.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            options = {
-                theme = "auto", 
-                section_separators = { left = "", right = "" },
-                component_separators = { left = "|", right = "|" },
-            }
-        }
-    },
-    {
-        -- reviewed
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-            },
-        },
-    },
-    -- not reviewed
-    {
-        "3rd/image.nvim",
-        ft = { "markdown", "norg" },
-        opts = {
-            backend = "kitty",
-            integrations = {
-                markdown = {
-                    enabled = true,
-                    clear_in_insert_mode = false,
-                    only_render_image_at_cursor = false,
-                },
-            },
-        },
-    },
-    -- not reviewed
-    {
-        "folke/twilight.nvim",
-        keys = {
-            { "<leader>tz", ":Twilight<CR>", desc = "Toggle Twilight (Focus Mode)" },
-        },
-        opts = {},
-    },
-    -- reviewed
-    {
-        "HiPhish/rainbow-delimiters.nvim",
-        event = "BufReadPost",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-    },
-    -- reviewed
-    {
-        "NvChad/nvim-colorizer.lua",
-        event = "BufReadPost",
-        opts = {
-            user_default_options = {
-                css = true,
-                tailwind = true,
-                mode = "background",
-            },
-        },
-    },
+	{
+		"nvim-tree/nvim-web-devicons",
+		lazy = true,
+		opts = {
+			override = {
+				css = {
+					icon = "",
+					color = "#563d7c",
+					cterm_color = "65",
+					name = "Css",
+				},
+			},
+		},
+	},
+	{
+		"rktjmp/lush.nvim",
+		lazy = true,
+	},
+	{
+		"RRethy/base16-nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("base16-grayscale-light")
+		end,
+	},
+	{
+		-- requires validation
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		opts = {
+			lsp = {
+				override = {
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true,
+				},
+			},
+			presets = {
+				bottom_search = false,
+				command_palette = true,
+				long_message_to_split = true,
+				inc_rename = false,
+				lsp_doc_border = true,
+			},
+			views = {
+				cmdline_popup = {
+					border = {
+						style = "rounded",
+					},
+					filter_options = {},
+					win_options = {
+						winhighlight = "NormalFloat:Normal,FloatBorder:FloatBorder",
+					},
+				},
+				popupmenu = {
+					relative = "editor",
+					position = {
+						row = 8,
+						col = "50%",
+					},
+					size = {
+						width = 60,
+						height = 10,
+					},
+					border = {
+						style = "rounded",
+						padding = { 0, 1 },
+					},
+					win_options = {
+						winhighlight = { Normal = "Normal", FloatBorder = "FloatBorder" },
+					},
+				},
+			},
+			config = function(_, opts)
+				require("noice").setup(opts)
+				vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "FloatBorder" })
+				vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { link = "Normal" })
+				vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
+				vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { link = "Normal" })
+			end,
+		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			options = {
+				theme = "auto",
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "|", right = "|" },
+			},
+		},
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+	-- requires validation
+	{
+		"3rd/image.nvim",
+		ft = { "markdown", "norg" },
+		opts = {
+			backend = "kitty",
+			integrations = {
+				markdown = {
+					enabled = true,
+					clear_in_insert_mode = false,
+					only_render_image_at_cursor = false,
+				},
+			},
+		},
+	},
+	{
+		"folke/twilight.nvim",
+		keys = {
+			{ "<leader>zm", ":Twilight<CR>", desc = "Toggle Twilight (Focus Mode)" },
+		},
+		opts = {},
+	},
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		event = "BufReadPost",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = "BufReadPost",
+		opts = {
+			user_default_options = {
+				css = true,
+				tailwind = true,
+				mode = "background",
+			},
+		},
+	},
 }
