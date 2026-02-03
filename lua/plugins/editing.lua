@@ -104,7 +104,6 @@ return {
 			})
 		end,
 	},
-	-- not reviewed
 	{
 		"gbprod/yanky.nvim",
 		dependencies = { "kkharji/sqlite.lua" },

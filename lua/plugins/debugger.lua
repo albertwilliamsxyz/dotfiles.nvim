@@ -1,11 +1,14 @@
 return {
-	-- reviewed, generate documentation for this one, and explain the whole configuration for this
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		dependencies = {
+			"mason.nvim",
+		}
+	},
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
-			-- generate documentation for this one
 			"rcarriga/nvim-dap-ui",
-			-- generate documentation for this one
 			"nvim-neotest/nvim-nio",
 			"jay-babu/mason-nvim-dap.nvim",
 		},

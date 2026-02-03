@@ -7,7 +7,7 @@ return {
 			local dashboard = require("alpha.themes.dashboard")
 
 			dashboard.section.header.val = {
-				"Synapse v1.0",
+				"Synapse v2.0",
 			}
 
 			dashboard.section.buttons.val = {
