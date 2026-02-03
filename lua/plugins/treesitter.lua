@@ -1,5 +1,9 @@
 return {
 	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "master",
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		-- master is a reference to a frozen branch and I should start using main
 		branch = "master",

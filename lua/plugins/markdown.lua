@@ -24,7 +24,7 @@ return {
 		ft = { "markdown" },
 		build = "cd app && npx --yes yarn install",
 		keys = {
-			{ "<leader>mp", ":MarkdownPreview<CR>", desc = "Markdown Preview" },
+			{ "<leader>mm", ":MarkdownPreview<CR>", desc = "Markdown Preview" },
 		},
 	},
 }
