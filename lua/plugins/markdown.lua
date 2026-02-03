@@ -1,8 +1,7 @@
 return {
-	-- reviewed
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
-		ft = { "markdown", "codecompanion" },
+		ft = { "markdown" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
@@ -10,11 +9,6 @@ return {
 		opts = {
 			heading = {
 				backgrounds = {
-					"RenderMarkdownHeadingBg",
-					"RenderMarkdownHeadingBg",
-					"RenderMarkdownHeadingBg",
-					"RenderMarkdownHeadingBg",
-					"RenderMarkdownHeadingBg",
 					"RenderMarkdownHeadingBg",
 				},
 			},
@@ -24,7 +18,6 @@ return {
 			require("render-markdown").setup(opts)
 		end,
 	},
-	-- not reviewed
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

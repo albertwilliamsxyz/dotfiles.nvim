@@ -1,5 +1,4 @@
 return {
-	-- reviewed
 	{
 		"mason-org/mason.nvim",
 		lazy = false,
@@ -8,55 +7,41 @@ return {
 			{ "<leader>pmm", ":Mason<CR>" },
 		},
 	},
-	-- reviewed
-	-- QUESTION, if I have already declared above mason-org/mason.nvim
-	-- and it has opts set, do I need to call mason setup here?
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = {
-			"williamboman/mason.nvim",
+			"mason-org/mason.nvim",
 		},
-		config = function()
-			require("mason").setup()
-			require("mason-tool-installer").setup({
-				ensure_installed = {
-					"lua_ls",
-					"html",
-					"cssls",
-					"cssmodules_ls",
-					"ts_ls",
-					"jsonls",
-					"emmet_language_server",
-					"pyright",
-					"stylua",
-					"eslint_d",
-					"prettierd",
-					"codespell",
-					"js-debug-adapter",
-				},
-			})
-		end,
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"html",
+				"cssls",
+				"cssmodules_ls",
+				"ts_ls",
+				"jsonls",
+				"emmet_language_server",
+				"pyright",
+				"stylua",
+				"eslint_d",
+				"prettierd",
+				"codespell",
+				"js-debug-adapter",
+			},
+		},
 	},
-
 	{
-		-- What is the relation between mason-lspconfig.nvim and nvim-lspconfig?
-		-- mason-lspconfig is being setup here, could I define it above?
-		-- so that I have the mason-lspconfig on one hand...
-		-- Or do I have to have it here because this is the first part of the
-		-- process in which I have access to the lspconfig object which is
-		-- necessary for the lspconfig with mason?
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason.nvim",
+			"mason-org/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			"saghen/blink.cmp",
 		},
 		config = function()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 
-			-- I want you to generate a new document with more details
-			-- about each one of the handlers we have, and what else we could add
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
 				ensure_installed = {},
@@ -119,7 +104,6 @@ return {
 						lspconfig.pyright.setup({
 							capabilities = capabilities,
 							before_init = function(_, config)
-								-- Automatically find the virtualenv
 								local function get_venv_path(root_dir)
 									local match = vim.fn.glob(root_dir .. "/.venv")
 									if match ~= "" then
@@ -156,25 +140,21 @@ return {
 				},
 			})
 
-			-- lets review the keybindings, I want to make sure they are the best option
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
 					local buffer = event.buf
 					local options = { buffer = buffer, silent = true }
 
-					-- Navigation
 					vim.keymap.set("n", "<leader>lgd", vim.lsp.buf.definition, options)
 					vim.keymap.set("n", "<leader>lgD", vim.lsp.buf.declaration, options)
 					vim.keymap.set("n", "<leader>lgi", vim.lsp.buf.implementation, options)
 					vim.keymap.set("n", "<leader>lgr", vim.lsp.buf.references, options)
 
-					-- Actions
 					vim.keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, options)
 					vim.keymap.set("n", "<leader>lca", vim.lsp.buf.code_action, options)
 					vim.keymap.set("n", "<leader>lft", vim.lsp.buf.format, options)
 
-					-- Diagnostics
 					vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, options)
 					vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, options)
 					vim.keymap.set("i", "<C-S>", vim.lsp.buf.signature_help, options)
