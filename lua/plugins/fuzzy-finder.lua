@@ -25,19 +25,18 @@ return {
 		},
 		config = function()
 			local telescope = require("telescope")
+
 			telescope.setup({
 				defaults = {
 					file_ignore_patterns = { "node_modules", ".git", ".env" },
 					layout_strategy = "vertical",
 					layout_config = {
 						vertical = {
-							mirror = true,
 							preview_height = 0.7,
 							prompt_position = "bottom",
 						},
 						width = 0.87,
 						height = 0.80,
-						preview_cutoff = 120,
 					},
 				},
 				pickers = {

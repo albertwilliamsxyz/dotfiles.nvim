@@ -1,12 +1,10 @@
 return {
-	-- reviewed
 	{
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
 		branch = "v0.6",
 		opts = {},
 	},
-	-- reviewed
 	{
 		"kylechui/nvim-surround",
 		version = "*",
@@ -17,7 +15,6 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 	},
-	-- reviewed, I love these kind of plugins
 	{
 		"Wansmer/treesj",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -45,7 +42,6 @@ return {
 			},
 		},
 	},
-	-- not reviewed
 	{
 		"monaqa/dial.nvim",
 		keys = {

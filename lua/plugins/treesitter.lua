@@ -141,5 +141,5 @@ return {
 				vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
 			end
 		end,
-	}
+	},
 }
