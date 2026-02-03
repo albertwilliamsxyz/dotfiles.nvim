@@ -32,7 +32,7 @@ return {
 					layout_strategy = "vertical",
 					layout_config = {
 						vertical = {
-							preview_height = 0.7,
+							preview_height = 0.5,
 							prompt_position = "bottom",
 						},
 						width = 0.87,
