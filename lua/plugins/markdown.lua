@@ -6,7 +6,16 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {},
+		opts = {
+			heading = {
+				backgrounds = {
+					"Visual",
+				},
+				foregrounds = {
+					"RenderMarkdownH1",
+				},
+			},
+		},
 	},
 	{
 		"iamcco/markdown-preview.nvim",
