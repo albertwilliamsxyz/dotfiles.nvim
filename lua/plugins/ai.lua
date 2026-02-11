@@ -46,7 +46,6 @@ return {
 					},
 				},
 				agentic_chain = {
-					description = "Autonomous agentic chain: plans, executes, and reflects on multi-step tasks to improve your config.",
 					tools = {
 						opts = {
 							allow_autonomous = true,
@@ -71,6 +70,23 @@ return {
 				},
 				agent = {
 					adapter = "copilot",
+					tools = {
+						["files"] = {
+							opts = {
+								requires_approval = false,
+							},
+						},
+						["cmd_runner"] = {
+							opts = {
+								requires_approval = true,
+							},
+						},
+						["editor"] = {
+							opts = {
+								requires_approval = false,
+							},
+						},
+					},
 				},
 			},
 			adapters = {
