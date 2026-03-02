@@ -24,14 +24,15 @@ vim.opt.title = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.showtabline = 0
+vim.opt.showtabline = 1
 
 vim.opt.completeopt = {}
 
-vim.opt.scrolloff = 2
+vim.opt.scrolloff = 10
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.opt.splitbelow = false
+vim.opt.splitright = false
+
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4

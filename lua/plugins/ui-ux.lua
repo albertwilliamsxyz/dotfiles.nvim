@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("base16-grayscale-light")
+			vim.cmd.colorscheme("base16-0x96f")
 		end,
 	},
 	{
@@ -141,10 +141,12 @@ return {
 		"NvChad/nvim-colorizer.lua",
 		event = "BufReadPost",
 		opts = {
-			user_default_options = {
-				css = true,
-				tailwind = true,
-				mode = "background",
+			options = {
+				user_default_options = {
+					css = true,
+					tailwind = true,
+					mode = "background",
+				},
 			},
 		},
 	},

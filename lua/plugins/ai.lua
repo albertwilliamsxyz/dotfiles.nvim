@@ -5,94 +5,75 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat", "CodeCompanionCmd" },
+		cmd = {
+			"CodeCompanion",
+			"CodeCompanionActions",
+			"CodeCompanionChat",
+			"CodeCompanionCmd",
+		},
 		keys = {
-			{ "<leader>ccc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "AI: Toggle Chat" },
-			{ "<leader>cca", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "AI: Actions" },
+			{
+				"<leader>ccc",
+				"<cmd>CodeCompanionChat Toggle<cr>",
+				mode = { "n", "v" },
+				desc = "AI: Toggle Chat",
+			},
+			{
+				"<leader>cca",
+				"<cmd>CodeCompanionActions<cr>",
+				mode = { "n", "v" },
+				desc = "AI: Actions",
+			},
+			{
+				"<leader>ccb",
+				"<cmd>CodeCompanionChat Add<cr>",
+				mode = { "n", "v" },
+				desc = "AI: Add content to chat",
+			},
 		},
 		opts = {
 			display = {
 				chat = {
 					window = {
-						layout = "vertical",
+						layout = "horizontal",
 						position = "bottom",
-						width = 0.45,
+						height = 0.5,
 					},
+					fold_context = true,
 				},
 				diff = {
 					enabled = true,
-					close_chat_at = 240,
 					layout = "horizontal",
 					ratio = 0.5,
 				},
 			},
 			interactions = {
 				chat = {
+					adapter = "copilot",
 					tools = {
 						opts = {
 							auto_submit_errors = false,
 							auto_submit_success = true,
 						},
-						["cmd_runner"] = {
-							opts = {
-								requires_approval = true,
-							},
-						},
-						["files"] = {
-							opts = {
-								requires_approval = false,
-							},
-						},
 					},
-				},
-				agentic_chain = {
-					tools = {
-						opts = {
-							allow_autonomous = true,
-							memory = true,
-							max_steps = 10,
-							reflection = true,
-						},
-						["cmd_runner"] = {
-							opts = {
-								require_approval_before = false,
-							},
-						},
-					},
-				},
-			},
-			strategies = {
-				chat = {
-					adapter = "copilot",
 				},
 				inline = {
 					adapter = "copilot",
 				},
-				agent = {
+				cmd = {
 					adapter = "copilot",
-					tools = {
-						["files"] = {
-							opts = {
-								requires_approval = false,
-							},
-						},
-						["cmd_runner"] = {
-							opts = {
-								requires_approval = true,
-							},
-						},
-						["editor"] = {
-							opts = {
-								requires_approval = false,
-							},
-						},
-					},
+				},
+				background = {
+					adapter = "copilot",
 				},
 			},
 			adapters = {
-				copilot = function()
-					return require("codecompanion.adapters").extend("copilot", {})
-				end,
+				http = {
+					opts = {
+						show_presets = false,
+						show_model_choices = false,
+					},
+				},
 			},
 		},
 	},

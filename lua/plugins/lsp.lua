@@ -27,6 +27,7 @@ return {
 				"prettierd",
 				"codespell",
 				"js-debug-adapter",
+				"purescript-language-server",
 			},
 		},
 	},

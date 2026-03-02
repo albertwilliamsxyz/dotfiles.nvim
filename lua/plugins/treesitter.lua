@@ -32,6 +32,7 @@ return {
 					"javascript",
 					"html",
 					"typescript",
+					"purescript",
 					"css",
 					"go",
 					"rust",

@@ -6,7 +6,7 @@ return {
 		},
 		opts = {
 			local_model = {
-				model = "small",
+				model = "base",
 				path = "~/whisper",
 			},
 		},
