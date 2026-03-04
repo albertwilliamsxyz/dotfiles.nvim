@@ -5,9 +5,16 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		opts = {
+			delete_recordings = true,
 			local_model = {
 				model = "base",
 				path = "~/whisper",
+				args = {
+					"--fp16",
+					"False",
+					"--language",
+					"en",
+				},
 			},
 		},
 		config = function(_, opts)

@@ -52,7 +52,7 @@ return {
 					adapter = "copilot",
 					tools = {
 						opts = {
-							auto_submit_errors = false,
+							auto_submit_errors = true,
 							auto_submit_success = true,
 						},
 					},
@@ -86,6 +86,7 @@ return {
 				suggestion = {
 					enabled = true,
 					auto_trigger = true,
+					trigger_on_accept = true,
 					keymap = {
 						accept = "<C-a>",
 						accept_word = false,
@@ -95,7 +96,9 @@ return {
 						dismiss = "<C-]>",
 					},
 				},
-				panel = { enabled = false },
+				panel = {
+					enabled = false,
+				},
 			})
 		end,
 	},
