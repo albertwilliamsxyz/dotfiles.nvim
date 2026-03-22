@@ -95,6 +95,14 @@ return {
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "|", right = "|" },
 			},
+			sections = {
+				lualine_c = {
+					{
+						"filename",
+						path = 1,
+					},
+				},
+			},
 		},
 	},
 	{
@@ -110,7 +118,6 @@ return {
 			},
 		},
 	},
-	-- requires validation
 	{
 		"3rd/image.nvim",
 		ft = { "markdown", "norg" },
@@ -120,7 +127,7 @@ return {
 				markdown = {
 					enabled = true,
 					clear_in_insert_mode = false,
-					only_render_image_at_cursor = false,
+					only_render_image_at_cursor = true,
 				},
 			},
 		},

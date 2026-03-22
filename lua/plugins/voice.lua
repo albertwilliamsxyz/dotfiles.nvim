@@ -7,13 +7,19 @@ return {
 		opts = {
 			delete_recordings = true,
 			local_model = {
-				model = "base",
+				model = "tiny.en",
 				path = "~/whisper",
 				args = {
+					"--threads",
+					"8",
+					"--output_format",
+					"txt",
 					"--fp16",
 					"False",
 					"--language",
 					"en",
+					"--device",
+					"cpu",
 				},
 			},
 		},
