@@ -17,6 +17,7 @@ return {
 				json = { "prettier", stop_after_first = true },
 				html = { "prettier", stop_after_first = true },
 				css = { "prettier", stop_after_first = true },
+				-- purescript = { "purs-tidy" },
 			},
 		},
 	},

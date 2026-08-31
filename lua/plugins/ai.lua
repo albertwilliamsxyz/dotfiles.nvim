@@ -80,6 +80,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		event = "BufReadPost",
+		enabled = false,
 		config = function()
 			require("copilot").setup({
 				suggestion = {

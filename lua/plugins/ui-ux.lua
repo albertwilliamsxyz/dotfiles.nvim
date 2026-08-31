@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("base16-0x96f")
+			vim.cmd.colorscheme("base16-grayscale-light")
 		end,
 	},
 	{

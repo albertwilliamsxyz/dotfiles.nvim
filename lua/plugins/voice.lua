@@ -7,7 +7,7 @@ return {
 		opts = {
 			delete_recordings = true,
 			local_model = {
-				model = "base",
+				model = "base.en",
 				path = "~/whisper",
 				args = {
 					"--threads",

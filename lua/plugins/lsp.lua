@@ -28,6 +28,7 @@ return {
 				"codespell",
 				"js-debug-adapter",
 				"purescript-language-server",
+				"purescript-tidy",
 			},
 		},
 	},
@@ -98,6 +99,25 @@ return {
 							settings = {
 								css = { lint = { unknownAtRules = "ignore" } },
 							},
+						})
+					end,
+
+					["purescriptls"] = function()
+						lspconfig.purescriptls.setup({
+							capabilities = capabilities,
+							settings = {
+								purescript = {
+									addSpagoSources = true,
+									addNpmPath = true,
+									-- formatter = "purs-tidy",
+								},
+							},
+							root_dir = require("lspconfig.util").root_pattern(
+								"spago.dhall",
+								"spago.yaml",
+								"bower.json",
+								"package.json"
+							),
 						})
 					end,
 
