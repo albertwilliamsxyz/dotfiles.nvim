@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
@@ -18,3 +15,7 @@ vim.keymap.set("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Force quit all" })
 vim.keymap.set("n", "<leader>crf", "<cmd>e!<cr>", { desc = "Config: Reload File" })
 
 vim.keymap.set("n", "<leader>ya", "<cmd>%y+<cr>", { desc = "Yank: Whole File" })
+
+-- Native undo history visualizer (bundled with nvim 0.12)
+vim.cmd.packadd("nvim.undotree")
+vim.keymap.set("n", "<leader>u", "<cmd>Undotree<cr>", { desc = "Undo history" })
