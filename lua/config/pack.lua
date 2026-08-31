@@ -16,7 +16,18 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", version = "main" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://codeberg.org/andyg/leap.nvim" },
+	{ src = "https://github.com/tpope/vim-repeat" },
+	{ src = "https://github.com/chrisgrieser/nvim-spider" },
+	{ src = "https://github.com/monaqa/dial.nvim" },
 }, { confirm = false })
 
 require("plugins.colorscheme")
 require("plugins.treesitter")
+require("plugins.fzf")
+require("plugins.oil")
+require("plugins.leap")
+require("plugins.spider")
+require("plugins.dial")
