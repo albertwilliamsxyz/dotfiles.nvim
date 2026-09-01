@@ -5,6 +5,9 @@ vim.g.maplocalleader = " "
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 
+-- Default border for every float: hover, signature help, diagnostics
+vim.opt.winborder = "rounded"
+
 -- autoread + nvim 0.12 fs-watchers: buffers reload when the agent edits files
 -- on disk. Locally modified buffers are never auto-reloaded (W12 warning).
 vim.opt.autoread = true
