@@ -18,7 +18,9 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://codeberg.org/andyg/leap.nvim" },
+	-- Pinned: HEAD (a2e74db) calls vim.iter():unique():count(), which needs
+	-- nightly. Unpin once upstream works on 0.12 stable again.
+	{ src = "https://codeberg.org/andyg/leap.nvim", version = "a5e9dfb25a1cf058811665859db1afc813897ec4" },
 	{ src = "https://github.com/tpope/vim-repeat" },
 	{ src = "https://github.com/chrisgrieser/nvim-spider" },
 	{ src = "https://github.com/monaqa/dial.nvim" },
