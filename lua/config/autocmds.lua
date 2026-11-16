@@ -2,7 +2,7 @@ local group = vim.api.nvim_create_augroup("config", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
 	group = group,
-	pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "purescript" },
 	callback = function()
 		vim.opt_local.tabstop = 2
 		vim.opt_local.softtabstop = 2

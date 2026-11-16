@@ -1,8 +1,11 @@
 -- Server binaries come from nix profile; nvim-lspconfig only provides the
 -- default configs that lsp/<name>.lua files override.
-vim.lsp.enable({ "lua_ls", "ts_ls", "jsonls", "html", "cssls", "emmet_language_server" })
+vim.lsp.enable({ "lua_ls", "ts_ls", "jsonls", "html", "cssls", "emmet_language_server", "purescriptls", "pyright" })
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+	virtual_text = { current_line = false },
+	virtual_lines = { current_line = true },
+})
 
 -- Native as-you-type completion (0.12): LSP via omnifunc first, then buffer
 -- sources capped at 5 candidates each. "fuzzy" covers what blink.cmp did.
@@ -16,6 +19,9 @@ end, { expr = true, desc = "Next completion item" })
 vim.keymap.set("i", "<S-Tab>", function()
 	return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>"
 end, { expr = true, desc = "Previous completion item" })
+vim.keymap.set("i", "<CR>", function()
+	return vim.fn.complete_info({ "selected" }).selected ~= -1 and "<C-y>" or "<CR>"
+end, { expr = true, desc = "Accept completion item" })
 
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Diagnostics: Float" })
 

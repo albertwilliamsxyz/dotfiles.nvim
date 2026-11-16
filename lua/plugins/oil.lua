@@ -31,3 +31,7 @@ require("oil").setup({
 
 vim.keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Edit Directory" })
 vim.keymap.set("n", "<leader>er", "<CMD>Oil .<CR>", { desc = "Edit Current Directory" })
+
+vim.keymap.set("n", "<leader>et", function()
+	vim.cmd("tab Oil " .. vim.fn.fnameescape(vim.fn.expand("%:p:h")))
+end, { desc = "Oil New Tab, Directory of Current File" })

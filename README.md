@@ -44,7 +44,8 @@ incremental selection · buffer freshness via `'autoread'` + checktime autocmd
 
 ```sh
 nix profile install nixpkgs#tree-sitter nixpkgs#lua-language-server \
-  nixpkgs#typescript-language-server nixpkgs#vscode-langservers-extracted
+  nixpkgs#typescript-language-server nixpkgs#vscode-langservers-extracted \
+  nixpkgs#pyright
 ```
 
 Day-1 languages: TypeScript/JS + web (ts_ls, html, cssls, jsonls) and Lua

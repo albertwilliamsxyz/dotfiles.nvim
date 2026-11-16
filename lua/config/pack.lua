@@ -17,6 +17,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/folke/which-key.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	-- Pinned: HEAD (a2e74db) calls vim.iter():unique():count(), which needs
 	-- nightly. Unpin once upstream works on 0.12 stable again.
@@ -24,12 +25,17 @@ vim.pack.add({
 	{ src = "https://github.com/tpope/vim-repeat" },
 	{ src = "https://github.com/chrisgrieser/nvim-spider" },
 	{ src = "https://github.com/monaqa/dial.nvim" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("*") },
 }, { confirm = false })
 
 require("plugins.colorscheme")
 require("plugins.treesitter")
 require("plugins.fzf")
 require("plugins.oil")
+require("plugins.whichkey")
 require("plugins.leap")
 require("plugins.spider")
 require("plugins.dial")
+require("plugins.gitsigns")
+require("plugins.surround")

@@ -10,6 +10,8 @@ local parsers = {
 	"markdown",
 	"markdown_inline",
 	"query",
+	"purescript",
+	"python",
 	"toml",
 	"tsx",
 	"typescript",
@@ -29,7 +31,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 		vim.wo[0][0].foldmethod = "expr"
 		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-		vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		local lang = vim.treesitter.language.get_lang(vim.bo[ev.buf].filetype)
+		if vim.treesitter.query.get(lang, "indents") then
+			vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		end
 	end,
 })
 

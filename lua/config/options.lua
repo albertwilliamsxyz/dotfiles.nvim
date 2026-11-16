@@ -7,6 +7,7 @@ vim.opt.cursorline = true
 
 -- Default border for every float: hover, signature help, diagnostics
 vim.opt.winborder = "rounded"
+vim.opt.pumborder = "rounded"
 
 -- autoread + nvim 0.12 fs-watchers: buffers reload when the agent edits files
 -- on disk. Locally modified buffers are never auto-reloaded (W12 warning).
@@ -17,6 +18,7 @@ vim.opt.autochdir = false
 vim.opt.undofile = true
 
 vim.opt.wrap = true
+vim.opt.linebreak = true
 vim.opt.wrapscan = false
 
 vim.opt.autoindent = true
@@ -51,7 +53,7 @@ vim.opt.ignorecase = true
 vim.opt.wildignorecase = true
 
 vim.opt.timeout = true
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 100000
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 10
 
